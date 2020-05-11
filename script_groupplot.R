@@ -3,7 +3,13 @@ library(GenomicRanges)
 library(IRanges)
 
 source("cnvAnalysis_Group_plotSummary.R")
-#source("removeArtifacts.R")
+
+# Before running this script, save files containing genomic segments and called CN status ("balanced", "gain" or "loss" for each segment. 
+# This can be done using R package conumee.
+# For this in github.com/dstichel/conumee 3 different versions of baseline correction are avaiable:
+# MAD: Centering the baseline according to median average deviation of intensities of all samples
+# MAXDENS: Centering the baseline to the intensitiy level of the most probes in the sample
+# BAF: Finding diploid level based on evaluation of SNP probes included in the chip
 
 anno.genome.size0<-read.xlsx("anno.genome.size.xlsx",colNames=FALSE)
 anno.genome.pq0<-read.xlsx("anno.genome.pq.xlsx",colNames=FALSE)
